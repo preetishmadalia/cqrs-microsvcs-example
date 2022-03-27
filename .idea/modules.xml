@@ -2,11 +2,12 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/account.cmd/account.cmd.iml" filepath="$PROJECT_DIR$/account.cmd/account.cmd.iml" />
-      <module fileurl="file://$PROJECT_DIR$/account.common/account.common.iml" filepath="$PROJECT_DIR$/account.common/account.common.iml" />
-      <module fileurl="file://$PROJECT_DIR$/account.query/account.query.iml" filepath="$PROJECT_DIR$/account.query/account.query.iml" />
+      <module fileurl="file://$PROJECT_DIR$/bank-account/account.cmd/account.cmd.iml" filepath="$PROJECT_DIR$/bank-account/account.cmd/account.cmd.iml" />
+      <module fileurl="file://$PROJECT_DIR$/bank-account/account.common/account.common.iml" filepath="$PROJECT_DIR$/bank-account/account.common/account.common.iml" />
+      <module fileurl="file://$PROJECT_DIR$/bank-account/account.query/account.query.iml" filepath="$PROJECT_DIR$/bank-account/account.query/account.query.iml" />
+      <module fileurl="file://$PROJECT_DIR$/bank-account/bank-account.iml" filepath="$PROJECT_DIR$/bank-account/bank-account.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/cqrs-microsvcs-example.iml" filepath="$PROJECT_DIR$/.idea/cqrs-microsvcs-example.iml" />
-      <module fileurl="file://$PROJECT_DIR$/cqrs.core/cqrs.core.iml" filepath="$PROJECT_DIR$/cqrs.core/cqrs.core.iml" />
+      <module fileurl="file://$PROJECT_DIR$/bank-account/cqrs.core/cqrs.core.iml" filepath="$PROJECT_DIR$/bank-account/cqrs.core/cqrs.core.iml" />
     </modules>
   </component>
 </project>
