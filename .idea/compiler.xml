@@ -13,10 +13,18 @@
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
-      <module name="account.cmd" target="1.5" />
-      <module name="account.common" target="1.5" />
-      <module name="account.query" target="1.5" />
-      <module name="cqrs.core" target="1.5" />
+      <module name="account.cmd" target="16" />
+      <module name="account.common" target="16" />
+      <module name="account.query" target="16" />
+      <module name="cqrs.core" target="16" />
     </bytecodeTargetLevel>
+  </component>
+  <component name="JavacSettings">
+    <option name="ADDITIONAL_OPTIONS_OVERRIDE">
+      <module name="account.cmd" options="-parameters" />
+      <module name="account.common" options="-parameters" />
+      <module name="account.query" options="-parameters" />
+      <module name="cqrs.core" options="-parameters" />
+    </option>
   </component>
 </project>

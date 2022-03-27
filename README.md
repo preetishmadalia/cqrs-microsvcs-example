@@ -1,1 +1,1 @@
-# cqrs-example
+# Microservice implementation using CQRS and Event Store
