@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/account.cmd/account.cmd.iml" filepath="$PROJECT_DIR$/account.cmd/account.cmd.iml" />
+      <module fileurl="file://$PROJECT_DIR$/account.common/account.common.iml" filepath="$PROJECT_DIR$/account.common/account.common.iml" />
+      <module fileurl="file://$PROJECT_DIR$/account.query/account.query.iml" filepath="$PROJECT_DIR$/account.query/account.query.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/cqrs-microsvcs-example.iml" filepath="$PROJECT_DIR$/.idea/cqrs-microsvcs-example.iml" />
+      <module fileurl="file://$PROJECT_DIR$/cqrs.core/cqrs.core.iml" filepath="$PROJECT_DIR$/cqrs.core/cqrs.core.iml" />
+    </modules>
+  </component>
+</project>
