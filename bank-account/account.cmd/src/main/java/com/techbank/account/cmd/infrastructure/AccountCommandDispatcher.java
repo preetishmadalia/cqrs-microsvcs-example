@@ -10,6 +10,7 @@ import java.util.List;
 import java.util.Map;
 
 public class AccountCommandDispatcher implements CommandDispatcher {
+
     private Map<Class<? extends BaseCommand>, List<CommandHandlerMethod>> routes = new HashMap<>();
 
     @Override
