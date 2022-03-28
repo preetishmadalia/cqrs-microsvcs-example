@@ -9,7 +9,6 @@ import com.techbank.cqrs.core.events.EventModel;
 import com.techbank.cqrs.core.infrastructure.EventStore;
 import com.techbank.cqrs.core.producers.EventProducer;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.dao.ConcurrencyFailureException;
 import org.springframework.stereotype.Service;
 
 import java.util.Date;
@@ -37,7 +36,7 @@ public class AccountEventStore implements EventStore {
 
         for(var event : events) {
             version++;
-
+            event.setVersion(version);
             var eventModel = EventModel.builder()
                     .aggregateIdentifier(aggregateId)
                     .eventData(event)
