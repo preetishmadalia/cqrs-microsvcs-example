@@ -7,6 +7,7 @@ import com.techbank.account.cmd.exceptions.ConcurrencyException;
 import com.techbank.cqrs.core.events.BaseEvent;
 import com.techbank.cqrs.core.events.EventModel;
 import com.techbank.cqrs.core.infrastructure.EventStore;
+import com.techbank.cqrs.core.producers.EventProducer;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.dao.ConcurrencyFailureException;
 import org.springframework.stereotype.Service;
@@ -20,6 +21,9 @@ public class AccountEventStore implements EventStore {
 
     @Autowired
     private EventStoreRepository eventStoreRepository;
+
+    @Autowired
+    EventProducer eventProducer;
 
     @Override
     public void saveEvents(String aggregateId, Iterable<BaseEvent> events, int expectedVersion) {
@@ -43,8 +47,8 @@ public class AccountEventStore implements EventStore {
                     .timestamp(new Date()).build();
             var persistedEvent = this.eventStoreRepository.save(eventModel);
 
-            if(persistedEvent != null) {
-                // TODO: Kafka
+            if(!persistedEvent.getId().isEmpty()) {
+                this.eventProducer.produce(event.getClass().getSimpleName(), event);
             }
         }
     }
