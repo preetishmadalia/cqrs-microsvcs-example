@@ -6,7 +6,6 @@ import com.techbank.account.common.events.FundsDepositedEvent;
 import com.techbank.account.common.events.FundsWithdrawnEvent;
 import com.techbank.account.query.infrastructure.handlers.EventHandler;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.kafka.annotation.KafkaHandler;
 import org.springframework.kafka.annotation.KafkaListener;
 import org.springframework.kafka.support.Acknowledgment;
 import org.springframework.stereotype.Service;
