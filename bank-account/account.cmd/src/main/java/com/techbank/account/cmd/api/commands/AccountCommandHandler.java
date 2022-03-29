@@ -40,4 +40,9 @@ public class AccountCommandHandler implements CommandHandler {
         accountAggregate.withdrawFunds(command.getAmount());
         this.eventSouringHandler.save(accountAggregate);
     }
+
+    @Override
+    public void handle(RestoreReadDbCommand command) {
+        this.eventSouringHandler.rePublishEvents();
+    }
 }

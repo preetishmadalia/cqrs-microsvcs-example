@@ -11,6 +11,7 @@ import com.techbank.cqrs.core.producers.EventProducer;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.text.MessageFormat;
 import java.util.Date;
 import java.util.List;
 import java.util.stream.Collectors;
@@ -56,8 +57,17 @@ public class AccountEventStore implements EventStore {
     public List<BaseEvent> getEvents(String aggregateId) {
         var eventStream = this.eventStoreRepository.findByAggregateIdentifier(aggregateId);
         if(eventStream == null || eventStream.size() == 0) {
-            throw new AggregateNotFoundException("Incorrect Account ID provided!");
+            throw new AggregateNotFoundException(MessageFormat.format("Incorrect Account ID provided {0}!", aggregateId));
         }
         return eventStream.stream().map(e -> e.getEventData()).collect(Collectors.toList());
+    }
+
+    @Override
+    public List<String> getAggregateIds() {
+        var eventStream = this.eventStoreRepository.findAll();
+        if(eventStream == null) {
+            throw new RuntimeException("This request cannot be completed.");
+        }
+        return eventStream.stream().map(EventModel::getAggregateIdentifier).distinct().collect(Collectors.toList());
     }
 }
